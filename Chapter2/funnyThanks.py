@@ -1,5 +1,5 @@
 # Funny thanks
-# Demonstruje sekwencje specjalne
+# Demonstrates special sequences
 
 print("\t\t\tFunny thanks")
 
