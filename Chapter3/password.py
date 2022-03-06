@@ -5,6 +5,7 @@ password = input("Input password: ")
 
 if password == "test":
     print("Welcome")
-
+else:
+    print("Wrong password")
 
 input("\n\nTo end the programme, press the Enter key.")
