@@ -22,3 +22,4 @@ print("Eagles - ", eagles)
 print("Tail - ", tail)
 print(tries)
 
+input("To exit the program, press enter.")
