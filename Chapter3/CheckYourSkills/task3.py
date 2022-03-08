@@ -32,7 +32,6 @@ while guess != the_number and change > 0:
         tries += 1
         change -= 1
         print(tries)
-
     elif guess == the_number:
         print("You guessed it! That number is", the_number)
         print("To succeed you only needed", tries, "tries!")
