@@ -26,3 +26,12 @@
 - Using values as conditions
 - Using compound conditions
 - Guess my number game? Program
+
+## Chapter 4 for loops, character strings and tuples. Playing shuffle letters.
+- Counting with the help of for loops
+- Applying functions and sequence operators to character strings
+- Chain indexing
+- Non-mutability of strings
+- Creating new chains
+- Chain cutting
+- Letter shuffling game
