@@ -34,7 +34,7 @@ guess = input("Your answer: ")
 while guess != correct and guess != "":
     print("Unfortunately, that's not the word.")
     guess = input("Your answer: ")
-    
+
 if guess == correct:
     print("Correct ! You guessed !")
 
