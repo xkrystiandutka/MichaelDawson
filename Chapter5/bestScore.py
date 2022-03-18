@@ -1,5 +1,5 @@
-# Best results
-# Demonstrates list methods
+# Best results 2.0
+# Demonstrates nested sequences
 
 scores = []
 
@@ -8,45 +8,37 @@ while choice != "0":
 
     print(
     """
-    Best scores
+    Top scores 2.0
     
     0 - finish
-    1 - show results
+    1 - display result
     2 - add result
-    3 - remove result 
-    4 - sort the results
     """
     )
     
     choice = input("You choose: ")
     print()
 
-    # end program
+    # end
     if choice == "0":
         print("Goodbye.")
 
-    # print table of best results
+    # display the table of best results
     elif choice == "1":
-         print("Top scores")
-         for score in scores:
-            print(score)
+        print("Top scores")
+        print("GRADER")
+        for entry in scores:
+            score, name = entry    
+            print(name, "■", score)
 
-    # add the score
+    # add a score
     elif choice == "2":
-        score = int(input("What score did you get?: "))
-        scores.append(score)
-
-    # remove the score
-    elif choice == "3":
-        score = int(input("Which score did you remove?: "))
-        if score in scores:
-            scores.remove(score)
-        else:
-            print(score, "not in score list.")
-
-    # sort the scores
-    elif choice == "4":
+        name = input("Enter player name: ")
+        score = int(input("What score did the player get?: "))
+        entry = (score, name)
+        scores.append(entry)
         scores.sort(reverse=True)
+        scores = scores[:5] # keep only the top 5 scores
 
     # unknown option
     else:
