@@ -27,7 +27,7 @@
 - Using compound conditions
 - Guess my number game? Program
 
-## Chapter 4 for loops, character strings and tuples. Playing shuffle letters.
+## Chapter 4 For loops, character strings and tuples. Playing shuffle letters.
 - Counting with the help of for loops
 - Applying functions and sequence operators to character strings
 - Chain indexing
@@ -35,3 +35,11 @@
 - Creating new chains
 - Chain cutting
 - Letter shuffling game
+
+## Chapter 5 Lists and dictionaries. The gallows game
+- Using lists
+- Using list methods
+- Tuples vs. lists
+- Using nested sequences
+- Shared references
+- Using dictionaries
