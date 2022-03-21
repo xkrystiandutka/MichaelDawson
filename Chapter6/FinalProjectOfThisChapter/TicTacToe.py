@@ -2,6 +2,9 @@
 # Computer playing tic-tac-toe against man
    
 # Global constants
+from shutil import move
+
+
 X = "X"
 O = "O"
 EMPTY = " "
@@ -93,3 +96,46 @@ def winner(board):
         return TIE
 
     return None
+
+def humanMove(board,human):
+    legal = legalMoves(board)
+    move = None
+    while move not in legal:
+            move = askNumber("What will your move be? (0 - 8):", 0, NUM_SQUARES)
+            if move not in legal:
+                print("\nThis field is already occupied, foolish man. Choose another.\n")
+    print("Excellent...")
+    return move
+
+def computerMove(board, computer, human):
+    """Cause the computer to perform the move."""
+    # create a working copy, since the function will be changing the list
+    board = board[:]
+    # best positions to take in order
+    BEST_MOVES = (4, 0, 2, 6, 8, 1, 3, 5, 7)
+
+    print("I choose board number", end=" ")
+    
+    # if the computer can win, make this move
+    for move in legalMoves(board):
+        board[move] = computer
+        if winner(board) == computer:
+            print(move)
+            return move
+        # this move has been checked, retract it
+        board[move] = EMPTY
+    
+    # if man can win, block this move
+    for move in legalMoves(board):
+        board[move] = human
+        if winner(board) == human:
+            print(move)
+            return move
+        # this move has been checked, retract it
+        board[move] = EMPTY
+
+    # since nobody can win in the next move, choose the best free field
+    for move in BEST_MOVES:
+        if move in legalMoves(board):
+            print(move)
+            return move
