@@ -12,7 +12,7 @@ TIE = "TIE"
 NUM_SQUARES = 9
 
 
-def display_instruct():
+def displayInstruct():
     print(
     """
     Welcome to the greatest intellectual challenge of all time, the
@@ -139,3 +139,29 @@ def computerMove(board, computer, human):
         if move in legalMoves(board):
             print(move)
             return move
+
+def next_turn(turn):
+    if turn == X:
+        return O
+    else:
+        return X
+
+    
+def congrat_winner(the_winner, computer, human):
+    if the_winner != TIE:
+        print(the_winner, "is the winner !")
+    else:
+        print("Tie!")
+
+    if the_winner == computer:
+        print("As I predicted, Man, once again I am the triumphant.  \n" \
+              "Proof that computers are superior to humans in every way.")
+
+    elif the_winner == human:
+        print("Well no!  That's impossible!  Somehow you managed to fool me, Human. \n" \
+              "But it will never happen again!  I, the PC, promise you that!")
+
+    elif the_winner == TIE:
+        print("You've had a lot of luck, Man, and somehow you've managed with me " \
+              ". \Celebrate this day... because this is the best result you can " \
+              "ever achieve.")
