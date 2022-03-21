@@ -2,6 +2,7 @@
 # Computer playing tic-tac-toe against man
    
 # Global constants
+from queue import Empty
 from urllib import response
 
 
@@ -55,3 +56,17 @@ def pieces():
         computer = X
         human = O
     return computer, human
+
+def newBoard():
+    board = []
+    for square in range(NUM_SQUARES):
+        board.append(EMPTY)
+    return board
+
+def displayBoard():
+    print("\n\t", board[0], "|", board[1], "|", board[2])
+    print("\t", "---------")
+    print("\t", board[3], "|", board[4], "|", board[5])
+    print("\t", "---------")
+    print("\t", board[6], "|", board[7], "|", board[8], "\n")
+
