@@ -140,28 +140,52 @@ def computerMove(board, computer, human):
             print(move)
             return move
 
-def next_turn(turn):
+def nextTurn(turn):
     if turn == X:
         return O
     else:
         return X
 
     
-def congrat_winner(the_winner, computer, human):
-    if the_winner != TIE:
-        print(the_winner, "is the winner !")
+def congratWinner(theWinner, computer, human):
+    if theWinner != TIE:
+        print(theWinner, "is the winner !")
     else:
         print("Tie!")
 
-    if the_winner == computer:
-        print("As I predicted, Man, once again I am the triumphant.  \n" \
+    if theWinner == computer:
+        print("As I predicted, Man, once again I am the triumphant.  \n" 
               "Proof that computers are superior to humans in every way.")
 
-    elif the_winner == human:
-        print("Well no!  That's impossible!  Somehow you managed to fool me, Human. \n" \
+    elif theWinner == human:
+        print("Well no!  That's impossible!  Somehow you managed to fool me, Human. \n" 
               "But it will never happen again!  I, the PC, promise you that!")
 
-    elif the_winner == TIE:
-        print("You've had a lot of luck, Man, and somehow you've managed with me " \
-              ". \Celebrate this day... because this is the best result you can " \
+    elif theWinner == TIE:
+        print("You've had a lot of luck, Man, and somehow you've managed with me \n "
+              "Celebrate this day... because this is the best result you can " 
               "ever achieve.")
+
+def main():
+    displayInstruct()
+    computer, human = pieces()
+    turn = X
+    board = newBoard()
+    displayBoard(board)
+
+    while not winner(board):
+        if turn == human:
+            move = humanMove(board, human)
+            board[move] = human
+        else:
+            move = computerMove(board, computer, human)
+            board[move] = computer
+        displayBoard(board)
+        turn = nextTurn(turn)
+
+    theWinner = winner(board)
+    congratWinner(theWinner, computer, human)
+
+main()
+
+input("\n\nTo exit the program, press enter.")
