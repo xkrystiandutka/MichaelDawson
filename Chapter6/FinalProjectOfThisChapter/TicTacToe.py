@@ -2,6 +2,9 @@
 # Computer playing tic-tac-toe against man
    
 # Global constants
+from urllib import response
+
+
 X = "X"
 O = "O"
 EMPTY = " "
@@ -29,3 +32,26 @@ def display_instruct():
     """
     )
 
+def askYesNo(question):
+    response = None
+    while response not in ("t", "n"):
+        response = input(question).lower()
+    return response
+
+def askNumber(question, low, high):
+    response = None
+    while response not in range(low, high):
+        response = int(input(question))
+    return response
+
+def pieces():
+    goFirst =askYesNo("Do you want to be entitled to the first move? (t/n):")
+    if goFirst == 't':
+        print("So the first move is yours, you'll need it.")
+        human = X
+        computer = O
+    else:
+        print("Your courage will get you lost... I make the first move.")
+        computer = X
+        human = O
+    return computer, human
