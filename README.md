@@ -43,3 +43,10 @@
 - Using nested sequences
 - Shared references
 - Using dictionaries
+
+## Chapter 6 Functions. Tic-tac-toe game
+- Creating functions
+- Using parameters and return values
+- Using named arguments and default parameter values
+- Using constants and global variables
+- Tic-tac-toe game
